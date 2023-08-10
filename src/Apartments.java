@@ -9,6 +9,7 @@ public class Apartments {
 
     private Students[] students;
 
+
     public Apartments(String name, int price, String address, Students[] students) {
         this.name = name;
         this.price = price;
@@ -24,84 +25,57 @@ public class Apartments {
         this.name = name;
     }
 
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public Students[] getStudents() {
-        return students;
-    }
-
-    public void setStudents(Students[] students) {
-        this.students = students;
-    }
-
-
-    public String getByName3() {
-        Scanner scan1 = new Scanner(System.in);
-        String name1 = scan1.next();
-        for (int i = 0; i < students.length; i++) {
-            switch (name1) {
-                case "Home":
-                    if (name1.contains("Home")) ;
-                    System.out.println(students[i]);
-            }
-
-
-        }
-        return "Succesfully done";
-
-    }
-
-    public String getByName2(){
+    public void getMyStudentsByApartments(Apartments apartments, Students[] students){
         Scanner scan=new Scanner(System.in);
-        String name2=scan.next();
+        String num=scan.next();
         for(int i=0; i<students.length; i++){
-            switch (name2){
-                case "Home1":
-                    System.out.println(students[i]);
-                    System.out.println("Put correct number");
+            if(apartments.getName().equals(num)){
+                System.out.println(students[i]+ " "+ "Apartment name is"+" " +apartments.getName());
+            }else{
+                System.out.println("Put correctly");
             }
         }
-        return "Done";
-    }
 
-    public String payPerMonth(Students[] students, int price) {
-        Students[] arr = new Students[students.length];
+        }
+
+
+
+        public void getMy(Apartments [] apartments){
+        Scanner scan1=new Scanner(System.in);
+        String num1=scan1.next();
+        for(int i=0; i<apartments.length; i++){
+            if(apartments[i].getName().equals(num1)){
+                System.out.println(apartments[i]);
+            }else{
+                System.out.println("Put correctly");
+            }
+        }
+        }
+
+
+        public void payPerMonth(Students[] student) {
         for (int i = 0; i < students.length; i++) {
-            arr[i] = students[i];
+           if(students[i].equals(student));
 
-            System.out.println(arr[i]+"this students will be pay"+" "+ this.price +"som");
+            System.out.println(student[i]+"this students will be pay"+" "+ this.price +"som");
+
         }
-        return "All done";
+
     }
 
-    public String payPerMonth2(Students [] students, int num2){
-        Students [] arr2=new Students[students.length];
-        for(int i=0; i<students.length; i++){
-            arr2[i]=students[i];
 
-            System.out.println(arr2[i]+" "+"this students has to pay: "+ num2+"som");
-        }
-        return "All done";
-    }
     public void getAll(){
         for(int i=0; i<students.length; i++){
             System.out.println(students[i]+" ");
         }
+
+
     }
+
 
     public String updateInfo(String name, String newAddress) {
         for (int i = 0; i < students.length; i++) {

@@ -10,7 +10,7 @@ public class Students {
 
 
 
-        public Students(String fullName, int phoneNumber, String address, int bankAccount) {
+    public Students(String fullName, int phoneNumber, String address, int bankAccount) {
             this.fullName = fullName;
             this.phoneNumber = phoneNumber;
             this.address = address;
@@ -19,33 +19,15 @@ public class Students {
         }
 
 
+    public String getFullName() {
+        return fullName;
+    }
 
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-        public String getFullName() {
-            return fullName;
-        }
-
-        public void setFullName(String fullName) {
-            this.fullName = fullName;
-        }
-
-        public int getPhoneNumber() {
-            return phoneNumber;
-        }
-
-        public void setPhoneNumber(int phoneNumber) {
-            this.phoneNumber = phoneNumber;
-        }
-
-        public String getAddress() {
-            return address;
-        }
-
-        public void setAddress(String address) {
-            this.address = address;
-        }
-
-        public int getBankAccount() {
+    public int getBankAccount() {
             return bankAccount;
         }
 
@@ -53,20 +35,37 @@ public class Students {
             this.bankAccount = bankAccount;
         }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-        public String liveIn(Apartments apartments, Students [] students) {
-            //Students [] arr1=new Students[students.length];
+    public void liveIn(Students [] students) {
+
             int num = 100;
+            int num1 = 500;
+            int num2 = 50;
+            int num3 = 1000;
+
             for (int i = 0; i < students.length; i++) {
                 if (students[i].getBankAccount() == num) {
-                    System.out.println(students[i] + " " + "Has to live 3 month");
+                    System.out.println(students[i] + " " + ":" + "Has to live 3 month");
 
-                } else if (students[i].getBankAccount() != num) {
-                    System.out.println(students[i] + " " + "Has to live 1 month");
+                }
+                if (students[i].getBankAccount() == num2) {
+                    System.out.println(students[i] + " " + ":" + "Has to live 1 month");
+                }
+                if (students[i].getBankAccount() == num1) {
+                    System.out.println(students[i] + " " + " :" + "Has to live 5 month");
+                }
+                if (students[i].getBankAccount() == num3) {
+                    System.out.println(students[i] + " " + ":" + "Has to live 7 month");
+                    break;
                 }
             }
-            return "How many days my students could live: ";
         }
+
+
+
 
 
         @Override
